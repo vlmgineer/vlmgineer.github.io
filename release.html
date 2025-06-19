@@ -114,7 +114,9 @@
               <a href="https://www.seas.upenn.edu/~dineshj/" target="_blank">Dinesh Jayaraman</a>
             </span>
           </div>
-          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">* and † denote equal contribution</span>
+          </div>
           
 
           <!-- Affiliations -->
@@ -127,6 +129,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block">Also <strong>Oral Spotlight</strong>✨ at <a href="https://rss-hardware-intelligence.github.io/" target="_blank">RSS Workshop on Robot Hardware-Aware Intelligence</a>, 2025</span>
           </div>
+          
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -162,7 +165,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://vlmgineer.github.io"
+                <a href="https://vlmgineer.github.io/release.html"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -229,6 +232,7 @@
         <figure class="image">
           <img src="./static/images/vlmgineer_method.png" alt="Overview of ZeroMimic">
         </figure>
+        <br>
         <div class="content has-text-justified">
           <p>
             <strong>VLMgineer</strong> takes unmodified environment source code, environment image, environmental description, and task description as context to zero-shot generate tool and action designs from a VLM.  It then iteratively refines its tool and action designs through a loop of candidate sampling, simulation-based evaluation, and evolution improvement.
@@ -240,10 +244,28 @@
 </section>
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Method. -->
+    <!-- Qualitative Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3">VLMgineer Qualitative Results</h2>
+        <div class="content has-text-justified">
+          <p><strong>VLMgineer</strong> builds upon previous Large Model-guided evolution methodologies to perform tool-action co-design. Specifically, <strong>VLMgineer</strong> consists of three algorithmic components:</p>
+          <ol>
+            <li>We prompt the VLM to generate a diverse <strong>population</strong> of potential candidate tool-action samples given raw environment code, task description, and system instructions as context.</li>
+            <li>We evaluate each of the design samples via task <strong>fitness</strong> functions and retain those with the top-<em>k</em> rewards.</li>
+            <li>We iteratively prompt the VLM to produce novel tool-sample offspring via guided tool <strong>mutation</strong> and <strong>crossover</strong>, progressively improving tool and action designs.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Quantitative Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">VLMgineer Quantitative Results</h2>
         <div class="content has-text-justified">
           <p><strong>VLMgineer</strong> builds upon previous Large Model-guided evolution methodologies to perform tool-action co-design. Specifically, <strong>VLMgineer</strong> consists of three algorithmic components:</p>
           <ol>
