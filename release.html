@@ -231,7 +231,7 @@
         </figure>
         <div class="content has-text-justified">
           <p>
-            VLMgineer takes unmodified environment source code, environment image, environmental description, and task description as context to zero-shot generate tool and action designs from a VLM.  It then iteratively refines its tool and action designs through a loop of candidate sampling, simulation-based evaluation, and evolution improvement.
+            <strong>VLMgineer</strong> takes unmodified environment source code, environment image, environmental description, and task description as context to zero-shot generate tool and action designs from a VLM.  It then iteratively refines its tool and action designs through a loop of candidate sampling, simulation-based evaluation, and evolution improvement.
           </p>
         </div>
       </div>
@@ -245,9 +245,12 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
-          <p>
-            Tool design and use reflect the ability to understand and manipulate the physical world through creativity, planning, and foresight. As such, it is often regarded as a measurable indicator of cognitive intelligence across biological species. While much of today's research on robotics intelligence focuses on generating better control strategies, inventing smarter tools offers a complementary form of physical intelligence: moving the problem-solving onus into the tool's geometry so that control becomes simpler.This motivates us to ask: can today's foundation models offer useful priors to automatically invent—and effectively wield—such tools? We present VLMgineer, a framework that harnesses the creativity of Vision–Language Models (VLMs) together with evolutionary search to co-design physical tools and the control policies that operate them. We evaluate VLMgineer on a diverse benchmark of everyday manipulation scenarios that demand creative tool design and use. Across this suite, VLMgineer consistently discovers tools and policies that solve tasks more effectively and innovatively, transforming challenging robotics problems into straightforward executions. It also consistently outperforms VLM-generated designs from human specifications and existing human-crafted tools for everyday tasks. To facilitate future research on automated tool invention, we will release our benchmark and code.
-          </p>
+          <p><strong>VLMgineer</strong> builds upon previous Large Model-guided evolution methodologies to perform tool-action co-design. Specifically, <strong>VLMgineer</strong> consists of three algorithmic components:</p>
+          <ol>
+            <li>We prompt the VLM to generate a diverse <strong>population</strong> of potential candidate tool-action samples given raw environment code, task description, and system instructions as context.</li>
+            <li>We evaluate each of the design samples via task <strong>fitness</strong> functions and retain those with the top-<em>k</em> rewards.</li>
+            <li>We iteratively prompt the VLM to produce novel tool-sample offspring via guided tool <strong>mutation</strong> and <strong>crossover</strong>, progressively improving tool and action designs.</li>
+          </ol>
         </div>
       </div>
     </div>
