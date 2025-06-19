@@ -91,37 +91,42 @@
           <h1 class="title is-1 publication-title">VLMgineer: Vision Language Models as Robotic Toolsmiths</h1>
           
           <!-- Authors -->
-          <!-- <div class="is-size-5 publication-authors">
+          <div class="is-size-4 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="https://ggao22.github.io/" target="_blank">George Jiayuan Gao</a>*,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="http://imtianyuli.com/" target="_blank">Tianyu Li</a>*,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+              <a href="https://junyaoshi.github.io/" target="_blank">Junyao Shi</a>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+              <a href="https://yihanli126.github.io/" target="_blank">Yihan Li</a>†,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="https://zizhe.io/" target="_blank">Zizhe Zhang</a>†,
             </span>
-          </div> -->
-
-           <div class="is-size-5 publication-authors">
-            <span class="author-block">Anonymous Submission</span>
+            <span class="author-block">
+              <a href="https://nbfigueroa.github.io/" target="_blank">Nadia Figueroa</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.seas.upenn.edu/~dineshj/" target="_blank">Dinesh Jayaraman</a>
+            </span>
           </div>
+          
+          
 
           <!-- Affiliations -->
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
-          </div> -->
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">University of Pennsylvania</span>
+          </div>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">Under Review</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Also <strong>Oral Spotlight</strong>✨ at <a href="https://rss-hardware-intelligence.github.io/" target="_blank">RSS Workshop on Robot Hardware-Aware Intelligence</a>, 2025</span>
+          </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -136,15 +141,15 @@
                 </a>
               </span> -->
               <!-- arXiv Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+              <span class="link-block">
+                <a href="https://vlmgineer.github.io/release.html"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (Coming Soon)</span>
                 </a>
-              </span> -->
+              </span>
               <!-- Video Link. -->
               <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
@@ -213,10 +218,41 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
   </div>
 </section>
-
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview of VLMgineer</h2>
+        <figure class="image">
+          <img src="./static/images/vlmgineer_method.png" alt="Overview of ZeroMimic">
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            VLMgineer takes unmodified environment source code, environment image, environmental description, and task description as context to zero-shot generate tool and action designs from a VLM.  It then iteratively refines its tool and action designs through a loop of candidate sampling, simulation-based evaluation, and evolution improvement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            Tool design and use reflect the ability to understand and manipulate the physical world through creativity, planning, and foresight. As such, it is often regarded as a measurable indicator of cognitive intelligence across biological species. While much of today's research on robotics intelligence focuses on generating better control strategies, inventing smarter tools offers a complementary form of physical intelligence: moving the problem-solving onus into the tool's geometry so that control becomes simpler.This motivates us to ask: can today's foundation models offer useful priors to automatically invent—and effectively wield—such tools? We present VLMgineer, a framework that harnesses the creativity of Vision–Language Models (VLMs) together with evolutionary search to co-design physical tools and the control policies that operate them. We evaluate VLMgineer on a diverse benchmark of everyday manipulation scenarios that demand creative tool design and use. Across this suite, VLMgineer consistently discovers tools and policies that solve tasks more effectively and innovatively, transforming challenging robotics problems into straightforward executions. It also consistently outperforms VLM-generated designs from human specifications and existing human-crafted tools for everyday tasks. To facilitate future research on automated tool invention, we will release our benchmark and code.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
