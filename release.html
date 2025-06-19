@@ -263,17 +263,21 @@
 </section>
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Qualitative Results. -->
+    <!-- Quantitative Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">VLMgineer Qualitative Results</h2>
+        <h2 class="title is-3">Quantitative Results on RoboToolBench</h2>
+        <figure class="image">
+          <img src="./static/images/quan.png" alt="RoboToolBench">
+        </figure>
+        <br>
         <div class="content has-text-justified">
-          <p><strong>VLMgineer</strong> builds upon previous Large Model-guided evolution methodologies to perform tool-action co-design. Specifically, <strong>VLMgineer</strong> consists of three algorithmic components:</p>
-          <ol>
-            <li>We prompt the VLM to generate a diverse <strong>population</strong> of potential candidate tool-action samples given raw environment code, task description, and system instructions as context.</li>
-            <li>We evaluate each of the design samples via task <strong>fitness</strong> functions and retain those with the top-<em>k</em> rewards.</li>
-            <li>We iteratively prompt the VLM to produce novel tool-sample offspring via guided tool <strong>mutation</strong> and <strong>crossover</strong>, progressively improving tool and action designs.</li>
-          </ol>
+          <p>
+            This figure compares the reward of Franka Gripper experiments, 3 Human Prompt experiments, and experiments on our proposed method across 12 tasks. For every method, the bars with the original dark color in the legend indicate the <i>average</i> reward of the five runs, while the bars with a paler color visible above them indicate the <i>best</i> reward over those runs.
+          </p>
+          <p>
+            <strong>VLMgineer</strong> works consistently well across tasks, in terms of both average and best rewards. We dive into interesting individual method comparisons now. As expected, the default Franka Panda two-finger gripper fails on the majority of these tasks. What is perhaps more noteworthy is that <strong>VLMgineer outperforms human-prompting!</strong> This is true across all tasks on both metrics, showing better and more reliable performance. While human prompts occasionally produced strong solutions, their results were less consistent and efficient. In tasks like <tt>CleanTable</tt> and <tt>ScoreGoal</tt>, both approaches reached similar peak rewards, but our method did so with significantly shorter paths.
+          </p>
         </div>
       </div>
     </div>
@@ -281,23 +285,45 @@
 </section>
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Quantitative Results. -->
+    <!-- Qualitative Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">VLMgineer Quantitative Results</h2>
+        <h2 class="title is-3">Qualitative Results on RoboToolBench</h2>
+        <figure class="image" style="text-align: center; margin: 0;">
+          <img src="./static/images/qual.png" 
+               alt="RoboToolBench" 
+               style="max-width: 80%; height: auto; display: inline-block;">
+        </figure>
+        <br>
         <div class="content has-text-justified">
-          <p><strong>VLMgineer</strong> builds upon previous Large Model-guided evolution methodologies to perform tool-action co-design. Specifically, <strong>VLMgineer</strong> consists of three algorithmic components:</p>
-          <ol>
-            <li>We prompt the VLM to generate a diverse <strong>population</strong> of potential candidate tool-action samples given raw environment code, task description, and system instructions as context.</li>
-            <li>We evaluate each of the design samples via task <strong>fitness</strong> functions and retain those with the top-<em>k</em> rewards.</li>
-            <li>We iteratively prompt the VLM to produce novel tool-sample offspring via guided tool <strong>mutation</strong> and <strong>crossover</strong>, progressively improving tool and action designs.</li>
-          </ol>
+          <p>
+            This figure presents a qualitative comparison of human-designed tools, RLBench tools, and <strong>VLMgineer</strong> tools on three tasks: <tt>BringCube</tt> (top row), <tt>ScoreGoal</tt> (middle row), and <tt>GatherSpheres</tt> (bottom row).
+            Human-designed tools (left column) generally offer suitable forms for task completion; however, <strong>VLMgineer</strong> (right column) creates more specialized features that enhance performance. For instance, in task <tt>ScoreGoal</tt>, our method produces long and bent shapes facilitating simpler, more efficient motions, which the robot just needs to move very little along one axis to hit the puck. On the other hand, the straight tool designed from human prompts would require more careful control of the puck. In <tt>GatherSphere</tt>, our design includes a scoop with side protection and an overhead stripe structure, effectively preventing spheres from bouncing away.
+          </p>          
         </div>
       </div>
     </div>
   </div>
 </section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      </div>
+    </div>
+  </div>
 
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">  <!-- Following Experiment Time-Lapse structure for content column width -->
+        <div class="content">
+          <pre><code class="bibtex-code">Coming Soon!</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
