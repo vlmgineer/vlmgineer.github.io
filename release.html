@@ -39,6 +39,19 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .abstract-box {
+      margin: 20px auto; /* 居中对齐 */
+      padding: 10px 20px;     /* 增加内边距，保持方块完整 */
+      border: 2px solid black; /* 添加边框 */
+      background-color: #f8f8f8; /* 轻微灰色背景，像 LaTeX */
+      text-align: justify; /* 两端对齐，让文本更整齐 */
+      line-height: 1.4; /* 增加行间距，提高可读性 */
+      border-radius: 8px; /* 让边角稍微圆滑 */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影，提高立体感 */
+  }
+  </style>
 </head>
 <body>
 
@@ -222,9 +235,10 @@
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full-width">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <!-- <div class="content has-text-justified"> -->
+          <div class="abstract-box">
           <p>
             Tool design and use reflect the ability to understand and manipulate the physical world through creativity, planning, and foresight. As such, it is often regarded as a measurable indicator of cognitive intelligence across biological species. While much of today's research on robotics intelligence focuses on generating better control strategies, inventing smarter tools offers a complementary form of physical intelligence: moving the problem-solving onus into the tool's geometry so that control becomes simpler.This motivates us to ask: can today's foundation models offer useful priors to automatically invent—and effectively wield—such tools? We present VLMgineer, a framework that harnesses the creativity of Vision–Language Models (VLMs) together with evolutionary search to co-design physical tools and the control policies that operate them. We evaluate VLMgineer on a diverse benchmark of everyday manipulation scenarios that demand creative tool design and use. Across this suite, VLMgineer consistently discovers tools and policies that solve tasks more effectively and innovatively, transforming challenging robotics problems into straightforward executions. It also consistently outperforms VLM-generated designs from human specifications and existing human-crafted tools for everyday tasks. To facilitate future research on automated tool invention, we will release our benchmark and code.
           </p>
