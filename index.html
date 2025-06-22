@@ -39,10 +39,23 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .abstract-box {
+      margin: 20px auto; /* 居中对齐 */
+      padding: 10px 20px;     /* 增加内边距，保持方块完整 */
+      border: 2px solid black; /* 添加边框 */
+      background-color: #f8f8f8; /* 轻微灰色背景，像 LaTeX */
+      text-align: justify; /* 两端对齐，让文本更整齐 */
+      line-height: 1.4; /* 增加行间距，提高可读性 */
+      border-radius: 8px; /* 让边角稍微圆滑 */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影，提高立体感 */
+  }
+  </style>
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -77,10 +90,10 @@
           </a>
         </div>
       </div> -->
-    </div>
+    <!--  </div>
 
   </div>
-</nav>
+</nav> -->
 
 
 <section class="hero">
@@ -189,8 +202,8 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="publication-video">
-          <video poster="" autoplay="" controls="" muted="" loop="" height="100%">
-              <source src="./static/videos/vlmgineer-web.mp4" type="video/mp4">
+          <video poster="" autoplay="" controls="" muted="" loop="" width="100%">
+              <source src="./static/videos/vlmgineer-intro-final.mp4" type="video/mp4">
             </video>
         </div>
       </div>
@@ -204,20 +217,121 @@
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full-width">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <!-- <div class="content has-text-justified"> -->
+          <div class="abstract-box">
           <p>
             Tool design and use reflect the ability to understand and manipulate the physical world through creativity, planning, and foresight. As such, it is often regarded as a measurable indicator of cognitive intelligence across biological species. While much of today's research on robotics intelligence focuses on generating better control strategies, inventing smarter tools offers a complementary form of physical intelligence: moving the problem-solving onus into the tool's geometry so that control becomes simpler.This motivates us to ask: can today's foundation models offer useful priors to automatically invent—and effectively wield—such tools? We present VLMgineer, a framework that harnesses the creativity of Vision–Language Models (VLMs) together with evolutionary search to co-design physical tools and the control policies that operate them. We evaluate VLMgineer on a diverse benchmark of everyday manipulation scenarios that demand creative tool design and use. Across this suite, VLMgineer consistently discovers tools and policies that solve tasks more effectively and innovatively, transforming challenging robotics problems into straightforward executions. It also consistently outperforms VLM-generated designs from human specifications and existing human-crafted tools for everyday tasks. To facilitate future research on automated tool invention, we will release our benchmark and code.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
   </div>
 </section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview of VLMgineer</h2>
+        <div class="publication-video">
+          <video poster="" autoplay="" controls="" muted="" loop="" width="100%">
+              <source src="./static/videos/VLMgineer_animation.mp4" type="video/mp4">
+          </video>
+        </div>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            <strong>VLMgineer</strong> takes unmodified environment source code, environment image, environmental description, and task description as context to zero-shot generate tool and action designs from a VLM.  It then iteratively refines its tool and action designs through a loop of candidate sampling, simulation-based evaluation, and evolution improvement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Bench. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">RoboToolBench</h2>
+        <figure class="image">
+          <img src="./static/images/RoboToolBench.png" alt="RoboToolBench">
+        </figure>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            <strong>VLMgineer</strong> produces innovative tool designs and their corresponding actions across 12 diverse tasks in <strong>RoboToolBench</strong> that are challenging to perform using a general-purpose robot arm and gripper.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Quantitative Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Quantitative Results on RoboToolBench</h2>
+        <figure class="image">
+          <img src="./static/images/quan.png" alt="RoboToolBench">
+        </figure>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            This figure compares the reward of Franka Gripper experiments, 3 Human Prompt experiments, and experiments on our proposed method across 12 tasks. For every method, the bars with the original dark color in the legend indicate the <i>average</i> reward of the five runs, while the bars with a paler color visible above them indicate the <i>best</i> reward over those runs.
+          </p>
+          <p>
+            <strong>VLMgineer</strong> works consistently well across tasks, in terms of both average and best rewards. We dive into interesting individual method comparisons now. As expected, the default Franka Panda two-finger gripper fails on the majority of these tasks. What is perhaps more noteworthy is that <strong>VLMgineer outperforms human-prompting!</strong> This is true across all tasks on both metrics, showing better and more reliable performance. While human prompts occasionally produced strong solutions, their results were less consistent and efficient. In tasks like <tt>CleanTable</tt> and <tt>ScoreGoal</tt>, both approaches reached similar peak rewards, but our method did so with significantly shorter paths.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Qualitative Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Qualitative Results on RoboToolBench</h2>
+        <figure class="image" style="text-align: center; margin: 0;">
+          <img src="./static/images/qual.png" 
+               alt="RoboToolBench" 
+               style="max-width: 80%; height: auto; display: inline-block;">
+        </figure>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            This figure presents a qualitative comparison of human-designed tools, RLBench tools, and <strong>VLMgineer</strong> tools on three tasks: <tt>BringCube</tt> (top row), <tt>ScoreGoal</tt> (middle row), and <tt>GatherSpheres</tt> (bottom row).
+            Human-designed tools (left column) generally offer suitable forms for task completion; however, <strong>VLMgineer</strong> (right column) creates more specialized features that enhance performance. For instance, in task <tt>ScoreGoal</tt>, our method produces long and bent shapes facilitating simpler, more efficient motions, which the robot just needs to move very little along one axis to hit the puck. On the other hand, the straight tool designed from human prompts would require more careful control of the puck. In <tt>GatherSphere</tt>, our design includes a scoop with side protection and an overhead stripe structure, effectively preventing spheres from bouncing away.
+          </p>          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      </div>
+    </div>
+  </div>
 
-
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">  <!-- Following Experiment Time-Lapse structure for content column width -->
+        <div class="content">
+          <pre><code class="bibtex-code">Coming Soon!</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
